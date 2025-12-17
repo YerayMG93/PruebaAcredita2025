@@ -1,0 +1,27 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificación de usuario</title>
+</head>
+<body>
+   <header>
+    <?php require_once('_includes/cabecera.php');?>
+   </header>
+   <section>
+       <a href="Index.html" alt="Enlace para volver atrás">Ir atrás</a>
+        <form action="none" method="post">
+            <label for="Correo electrónico">Correo electrónico:</label>
+            <input type="text" name="Correo electrónico" value=""><br>
+            <label for="Tipo de consulta">Tipo de consulta:</label>
+            <select name="Tipo de consulta" id="consulta">
+                <option value="querella">querella</option>
+                <option value="reserva">reserva</option>
+            </select><br>
+            <label for=""></label>
+            <label for="Mensaje">Mensaje:</label>
+            <textarea name="Mensaje" id="Mensaje"></textarea><br>
+            <input type="submit" value="Enviar">
+        </form>
+   </section>
+</body>
+</html>
