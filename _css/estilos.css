@@ -3,19 +3,17 @@
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
-    color: antiquewhite;
 }
 
 #grid-container{
   display: grid;
   grid-template-areas:
-  'header'
-  'menu'
-  'main'
-  'facts'
-  'footer';
+  'header header'
+  'menu main'
+  'footer footer';
   background-color: darkgray;
   gap: 1em;
+  padding-bottom: 1em;
 }
 
 #header{
@@ -38,6 +36,44 @@
 }
 
 #googleMap{
-    width:100%;
+    width:45%;
     height:400px;
+}
+
+@media (min-width: 768px) {
+    #grid-container{
+        display: grid;
+        grid-template-areas:
+        'header'
+        'menu'
+        'main'
+        'footer';
+        background-color: darkgray;
+        gap: 1em;
+        padding-bottom: 1em;
+      }
+      
+      #header{
+          grid-area: header;
+          background-color: green;
+      }
+      
+      #menu{
+          grid-area: menu;
+          background-color: darkgrey;
+      }
+      
+      #main{
+          grid-area: main;
+          border: 1px, solid, black;
+      }
+      
+      #footer{
+          grid-area: footer;
+      }
+      
+      #googleMap{
+          width:100%;
+          height:400px;
+      }
 }
