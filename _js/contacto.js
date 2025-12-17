@@ -1,0 +1,4 @@
+function goToIndex(){
+    console.log("hola");
+    window.location.href = "./index.html";
+}
