@@ -1,8 +1,8 @@
 //VARIABLES
-const email = document.getElementsByName("email");
-const tipoConsulta = document.getElementsByName("tipoConsulta");
-const mensaje = document.getElementsByName("mensaje");
-const btnSubmit = document.getElementsById("btnSubmit");
+const email = document.querySelector("#email");
+const tipoConsulta = document.querySelector("#tipoConsulta");
+const mensaje = document.querySelector("#mensaje");
+const btnSubmit = document.querySelector("#btnSubmit");
 
 const errores = {
 	email: document.querySelector("#email + .error"),
@@ -48,11 +48,10 @@ function validarTipoConsulta() {
 }
 //Validar mensaje
 function validarMensaje() {
-	const contador = document.querySelector(".contador");
-	contador.textContent = `${mensaje.value.length} / 450`;
+	const max = 50;
 	//¿Se ha escrito demasiado?
-	if (mensaje.value.length > 50) {
-	  errores.mensaje.textContent = "Máximo 50 caracteres";
+	if (mensaje.value.length > max) {
+	  errores.mensaje.textContent = `Máximo ${max} caracteres`;
 	  return false;
 	}
 	//Todo ok
@@ -61,15 +60,17 @@ function validarMensaje() {
 }
 
 //Comprobar el formulario completo
-function validarFormulario() {
-	const valido =
-	  validarEmail() &&
-	  validarTipoConsulta() &&
-	  validarMensaje();
-	btnEnviar.disabled = !valido;
+function validarFormulario() {	  
+	btnSubmit.disabled = !(validarEmail() &&
+	validarTipoConsulta() &&
+	validarMensaje());
 }
 
 //LISTENERS
 email.addEventListener("input", validarFormulario);
 tipoConsulta.addEventListener("change", validarFormulario);
 mensaje.addEventListener("input", validarFormulario);
+btnSubmit.addEventListener("submit", (e) =>{
+	e.preventDefault();
+	console.log("TODO conexion a BBDD para subir datos y envío de email");
+});
