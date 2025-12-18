@@ -14,17 +14,25 @@
    <section>
 	<button onclick="goToIndex()">Volver atrás</button>
         <form action="none" method="post">
-            <label for="Correo electrónico">Correo electrónico:</label>
-            <input type="text" name="Correo electrónico" value=""><br>
-            <label for="Tipo de consulta">Tipo de consulta:</label>
-            <select name="Tipo de consulta" id="consulta">
-                <option value="querella">querella</option>
-                <option value="reserva">reserva</option>
-            </select><br>
-            <label for=""></label>
-            <label for="Mensaje">Mensaje:</label>
-            <textarea name="Mensaje" id="Mensaje"></textarea><br>
-            <input type="submit" value="Enviar">
+            <div class = "campo">
+				<label for="email">Correo electrónico:</label>
+            	<input type="email" name="email" value="">
+				<small class="error"></small><br>
+			</div>
+			<div class = "campo">
+				<label for="tipoConsulta">Tipo de consulta:</label>
+            	<select name="tipoConsulta" id="consulta">
+					<option value="">Selecciona una opción</option>
+            	    <option value="querella">querella</option>
+            	    <option value="reserva">reserva</option>
+            	</select>
+				<small class="error"></small><br>
+			<div class = "campo">
+				<label for="mensaje">Mensaje:</label>
+            	<textarea name="mensaje" id="mensaje"></textarea>
+				<small class="error"></small><br>
+			</div>
+            <input type="submit" value="Enviar" disabled id="btnSubmit">
         </form>
    </section>
    <script src="_js/contacto.js"></script>
